@@ -43,8 +43,10 @@ function updateVideoScreen() {
     f = !f;
     if (f) {
         w.style.width = "calc(100% - 1px)";
+        $(".screen").html(' <div class="cbtn full"> ');
     } else {
         w.style.width = "50%";
+        $(".screen").html(' <div class="cbtn empty"> ');
     }
     toggleFullScreen();
 }
