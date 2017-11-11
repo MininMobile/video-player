@@ -1,11 +1,15 @@
 var v;
+var w;
 var s;
 var l;
+var f;
 
 function onLoad() {
     v = document.getElementById("player");
+    w = document.getElementsByClassName("videoWrapper")[0];
     s = document.getElementsByClassName("slideBtn")[0];
     l = document.getElementsByClassName("volBtn")[0];
+    f = false;
 
     // Init Slider
     s.setAttribute("min", "0");
@@ -36,15 +40,13 @@ $(document).on('input', ".volBtn", function() { updateVideoVolume(); });
 function updateVideoTime() { v.currentTime = s.value; }
 
 function updateVideoScreen() {
-    if (v.requestFullscreen) {
-        v.requestFullscreen();
-    } else if (v.mozRequestFullScreen) {
-        v.mozRequestFullScreen();
-    } else if (v.webkitRequestFullscreen) {
-        v.webkitRequestFullscreen();
-    }else if (v.msRequestFullscreen) {
-        v.msRequestFullscreen();
+    f = !f;
+    if (f) {
+        w.style.width = "calc(100% - 1px)";
+    } else {
+        w.style.width = "50%";
     }
+    toggleFullScreen();
 }
 function updateSlider() {
     s.value = v.currentTime;
@@ -99,3 +101,23 @@ function playPause(paused) {
         $(".play").html(' <div class="cbtn playBtn"></div> ');
     }
 }
+function toggleFullScreen() {
+    if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+     (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+      if (document.documentElement.requestFullScreen) {  
+        document.documentElement.requestFullScreen();  
+      } else if (document.documentElement.mozRequestFullScreen) {  
+        document.documentElement.mozRequestFullScreen();  
+      } else if (document.documentElement.webkitRequestFullScreen) {  
+        document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+      }  
+    } else {  
+      if (document.cancelFullScreen) {  
+        document.cancelFullScreen();  
+      } else if (document.mozCancelFullScreen) {  
+        document.mozCancelFullScreen();  
+      } else if (document.webkitCancelFullScreen) {  
+        document.webkitCancelFullScreen();  
+      }  
+    }  
+  }
