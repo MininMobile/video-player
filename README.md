@@ -2,15 +2,24 @@
 A simple html5 video player.
 
 ## Usage
-Put `.mp4` of video in `Media` directory.
+Add your video to a directory somewhere on the webserver, just
+somewhere you can access the video.
 
-For when you want to use a video in your website, copy
-& paste `video.html` and edit it to work with your
-website's styling and structure, then the main `videoWrapper`
-element will be what houses your video, so design your
-website around that.
+For when you want to use a video in your website, make sure you add 
+`<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>`
+and `<script src="videoLoader.js"></script>` to the html `head` tag.
 
-(Yes, I know it's a pretty bad way to implement it b-but
+Then, add `<div class="videoWrapper" style="width: 50%;">` where you
+want the video player to be, the width will automatically adjust the
+height for you.
+
+Next up, add `<script>var videoName = "Media/video.mp4"; var videoType = "video/mp4"; onload2();</script>`
+to the end of the page, this will; set the directory and name of the
+video so it can be played, and, set the video type to mp4, you can
+customize this so it works your you. `onload2();` just launches the
+embed process.
+
+(Yes, I know you can only have one video on the page at a time, b-but
 I'm working on it! <3)
 
 ## Credits
