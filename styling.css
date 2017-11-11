@@ -24,7 +24,9 @@ ul.controls {
     padding: 0;
     width: 70%;
     height: 2em;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background: white;
+    opacity: 0;
+    transition: opacity 0.35s;
     top: -2em;
     z-index: 9;
 }
@@ -37,8 +39,14 @@ ul.controls li {
 
 .slide {
     margin-top: 1px;
+    width: 82%;
 }
-
+.slideBtn {
+    width: 100%;
+}
 #player {
     z-index: -1;
 }
+
+#player:hover + .controls { opacity: 1; }
+.controls:hover { opacity: 1; }
