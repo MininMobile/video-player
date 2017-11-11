@@ -64,17 +64,18 @@ ul.controls li {
 
 .screen {
     width: 3%;
+    margin-right: 4px;
 }
 .empty {
-    background: url("Media/Play.png");
+    background: url("Media/Emptyscreen.png");
 }
 .full {
-    background: url("Media/Pause.png");
+    background: url("Media/Fullscreen.png");
 }
 
 .slide {
     display: block;
-    margin: 1px auto 0 auto;
+    margin: 2px auto 0 auto;
     width: 50%;
 }
 .slideBtn {
@@ -88,7 +89,6 @@ ul.controls li {
 
 #player {
     z-index: -1;
-    filter: invert();
 }
 
 #player:hover + .controls { opacity: 1; }
