@@ -50,6 +50,10 @@ ul.controls li {
 .muted {
     background: url("Media/Muted.png");
 }
+.volBtn {
+    -webkit-appearance: slider-vertical;
+    appearance: slider-vertical;
+}
 
 .slide {
     margin-top: 1px;

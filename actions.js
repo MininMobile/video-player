@@ -4,6 +4,7 @@ var s;
 function onLoad() {
     v = document.getElementById("player");
     s = document.getElementsByClassName("slideBtn")[0];
+    l = document.getElementsByClassName("volBtn")[0];
 
     // Init Slider
     s.setAttribute("min", "0");
@@ -11,18 +12,25 @@ function onLoad() {
     updateSlider();
     setInterval(function(){updateSlider()}, 500);
 
+    // Init Loudness
+    l.setAttribute("min", "0");
+    l.setAttribute("max", "100");
+    l.setAttribute("value", "50");
+
     // Init Play
     $(".play").click(function() { playPause(v.paused); })
 }
-$(document).on('input', s, function() { updateVideo(); });
+$(document).on('input', ".slideBtn", function() { updateVideoTime(); });
+$(document).on('input', ".volBtn", function() { updateVideoVolume(); });
 
+function updateVideoVolume() { v.volume = l.value/100 }
 function updateSlider() {
     s.value = v.currentTime;
     if (s.value == Math.floor(v.duration)) {
         playPause(false);
     }
 }
-function updateVideo() { v.currentTime = s.value; }
+function updateVideoTime() { v.currentTime = s.value; }
 
 function playPause(paused) {
     if (paused) {
