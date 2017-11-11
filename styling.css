@@ -12,12 +12,9 @@ ul.controls {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-left: 4px;
     width: 50%;
     height: 2em;
     background: white;
-    opacity: 0;
-    transition: opacity 0.35s;
     top: -2em;
     z-index: 9;
 }
@@ -36,7 +33,8 @@ ul.controls li {
 }
 
 .play {
-    width: 3%;
+    margin-left: 4px;
+    width: 1em;
 }
 .playBtn {
     background: url("Media/Play.png");
@@ -46,7 +44,7 @@ ul.controls li {
 }
 
 .volume {
-    width: 3%;
+    width: 1em;
 }
 .unmuted {
     background: url("Media/Unmuted.png");
@@ -63,7 +61,7 @@ ul.controls li {
 }
 
 .screen {
-    width: 3%;
+    width: 1em;
     margin-right: 4px;
 }
 .empty {
@@ -73,25 +71,48 @@ ul.controls li {
     background: url("Media/Fullscreen.png");
 }
 
+.controls input[type=range] {
+    z-index: 9;
+    height: 5px;
+    -webkit-appearance: none;
+    outline: none;
+    overflow: hidden;
+    background: #e9e9e9;
+}
+.controls input[type=range].volBtn {
+    height: 0.75em;
+} 
+
 .slide {
+    position: relative;
     display: block;
-    margin: 2px auto 0 auto;
-    width: 50%;
+    left: -2px;
+    top: -2px;
+    margin: 0;
+    padding: 0;
+    width: calc(100% + 1px);
 }
 .slideBtn {
     width: 100%;
 }
 
 .length {
-    margin-top: 2px;
-    font-size: 0.75em;
+    margin: 0;
+    padding: 0;
+    margin-top: 1px;
+    font-size: 0.8em;
 }
 
 #player {
     z-index: -1;
 }
 
-#player:hover + .controls { opacity: 1; }
-.controls:hover { opacity: 1; }
+#player:hover + .controlsBar { opacity: 1; }
+.controlsBar:hover { opacity: 1; }
 
 .right { float: right !important; }
+
+.controlsBar { opacity: 0; transition: opacity 0.35s; }
+
+.controls div { z-index: -1; }
+.controls .slide { z-index: 1; }
