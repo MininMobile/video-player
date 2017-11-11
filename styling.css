@@ -3,18 +3,31 @@ body {
     margin: 0;
 }
 
-.pbtn {
-    width: 1em;
+.cbtn {
+    width: 100%;
     height: 1em;
-    background-size: cover !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
 }
 
+.play {
+    width: 3%;
+}
 .playBtn {
     background: url("Media/Play.png");
 }
-
 .pauseBtn {
     background: url("Media/Pause.png");
+}
+
+.volume {
+    width: 3%;
+}
+.unmuted {
+    background: url("Media/Unmuted.png");
+}
+.muted {
+    background: url("Media/Muted.png");
 }
 
 ul.controls {
@@ -22,7 +35,8 @@ ul.controls {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 70%;
+    padding-left: 4px;
+    width: 50%;
     height: 2em;
     background: white;
     opacity: 0;
@@ -34,18 +48,20 @@ ul.controls {
 ul.controls li {
     float: left;
     display: inline-block;
-    padding: 0.5em;
+    padding: .5em 4px;
 }
 
 .slide {
     margin-top: 1px;
-    width: 82%;
+    width: 80%;
 }
 .slideBtn {
     width: 100%;
 }
+
 #player {
     z-index: -1;
+    filter: invert();
 }
 
 #player:hover + .controls { opacity: 1; }

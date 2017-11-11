@@ -4,15 +4,16 @@
         <script src="actions.js"></script>
         <link rel="stylesheet" type="text/css" href="styling.css">
     </head>
-    <body>
+    <body onload="onLoad()">
         
-            <video id="player" onclick="playPause()" width="70%">
+            <video id="player" onclick="playPause(v.paused)" width="50%">
                 <source src="Media/video.mp4" type="video/mp4">
                 Your browser sucks
             </video>
             <ul class="controls">
-                <li class="play"> <div class="pbtn playBtn"> </li>
+                <li class="play"> <div class="cbtn playBtn"></div> </li>
                 <li class="slide"> <input type="range" class="slideBtn"> </li>
+                <li class="volume"> <div class="cbtn unmuted"></div> </li>
             </ul>
 
     </body>
