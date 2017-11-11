@@ -11,7 +11,7 @@ function onLoad() {
     s.setAttribute("min", "0");
     s.setAttribute("max", v.duration);
     updateSlider();
-    setInterval(function(){updateSlider()}, 500);
+    v.ontimeupdate = function() { updateSlider() };
 
     // Init Loudness
     l.setAttribute("min", "0");
@@ -26,6 +26,9 @@ function onLoad() {
     
     // Init Mute
     $(".screen").click(function() { updateVideoScreen(); })
+    
+    // Init Speed
+    $(".speed").click(function() { updateVideoSpeed(); })
 }
 $(document).on('input', ".slideBtn", function() { updateVideoTime(); });
 $(document).on('input', ".volBtn", function() { updateVideoVolume(); });
@@ -60,6 +63,20 @@ function updateSlider() {
     
     if (s.value == Math.floor(v.duration)) {
         playPause(false);
+    }
+}
+function updateVideoSpeed() {
+    var speed = prompt("Enter video speed (0.15 to 10)");
+    if (isNaN(speed)) {
+        alert("Invalid Number");
+    } else {
+        if (speed > 10) {
+            speed = 10;
+        } else if (speed < 0.15) {
+            speed = 0.15;
+        }
+
+        v.playbackRate = speed;
     }
 }
 function updateVideoVolume() {

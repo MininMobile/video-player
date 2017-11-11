@@ -71,6 +71,14 @@ ul.controls li {
     background: url("Media/Fullscreen.png");
 }
 
+.speed {
+    width: 1em;
+    margin-right: 4px;
+}
+.fast {
+    background: url("Media/Speed.png");
+}
+
 .controls input[type=range] {
     z-index: 9;
     height: 5px;
