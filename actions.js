@@ -3,12 +3,14 @@ var w;
 var s;
 var l;
 var f;
+var initialWidth;
 
 function onLoad() {
     v = document.getElementById("player");
     w = document.getElementsByClassName("videoWrapper")[0];
     s = document.getElementsByClassName("slideBtn")[0];
     l = document.getElementsByClassName("volBtn")[0];
+    initialWidth = w.style.width;
     f = false;
 
     // Init Slider
@@ -43,9 +45,11 @@ function updateVideoScreen() {
     f = !f;
     if (f) {
         w.style.width = "calc(100% - 1px)";
+        w.style.height = "100vh";
         $(".screen").html(' <div class="cbtn full"> ');
     } else {
-        w.style.width = "50%";
+        w.style.width = initialWidth;
+        w.style.height = "initial";
         $(".screen").html(' <div class="cbtn empty"> ');
     }
     toggleFullScreen();

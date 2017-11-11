@@ -119,8 +119,6 @@ ul.controls li {
 
 .videoWrapper {
     position: absolute;
-    width: 50%;
-    height: 100vh;
     overflow: hidden;
 }
 
