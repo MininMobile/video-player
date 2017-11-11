@@ -112,7 +112,7 @@ ul.controls li {
 }
 
 #player {
-    z-index: -1;
+    overflow: hidden;
 }
 
 #player:hover + .controlsBar { opacity: 1; }
