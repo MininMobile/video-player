@@ -6,12 +6,32 @@ body {
 .pbtn {
     width: 1em;
     height: 1em;
+    background-size: cover !important;
 }
 
 .playBtn {
-
+    background: url("Media/Play.png");
 }
 
 .pauseBtn {
-    
+    background: url("Media/Pause.png");
+}
+
+ul.controls {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 70%;
+    height: 2em;
+    background: white;
+}
+
+ul.controls li {
+    float: left;
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.slide {
+    margin-top: 1px;
 }
