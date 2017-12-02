@@ -24,20 +24,20 @@ function onLoad() {
     l.setAttribute("max", "100");
     l.setAttribute("value", "50");
 
-    // Init Play
-    $(".play").click(function() { playPause(v.paused); })
+	// Init Play
+	document.getElementsByClassName("play")[0].addEventListener("click", function() { playPause(v.paused) }, false);
     
     // Init Mute
-    $(".volume").click(function() { l.value = 0; updateVideoVolume(); })
+    document.getElementsByClassName("volume")[0].addEventListener("click", function() { l.value = 0; updateVideoVolume(); }, false);
     
     // Init Mute
-    $(".screen").click(function() { updateVideoScreen(); })
+    document.getElementsByClassName("screen")[0].addEventListener("click", function() { updateVideoScreen(); }, false);
     
     // Init Speed
-    $(".speed").click(function() { updateVideoSpeed(); })
+    document.getElementsByClassName("speed")[0].addEventListener("click", function() { updateVideoSpeed(); }, false);
 }
-$(document).on('input', ".slideBtn", function() { updateVideoTime(); });
-$(document).on('input', ".volBtn", function() { updateVideoVolume(); });
+document.getElementsByClassName("slideBtn")[0].addEventListener("input", function() { updateVideoTime(); }, false);
+document.getElementsByClassName("volBtn")[0].addEventListener("input", function() { updateVideoVolume(); }, false);
 
 function updateVideoTime() { v.currentTime = s.value; }
 
@@ -46,11 +46,11 @@ function updateVideoScreen() {
     if (f) {
         w.style.width = "calc(100% - 1px)";
         w.style.height = "100vh";
-        $(".screen").html(' <div class="cbtn full"> ');
+        document.getElementsByClassName("screen")[0].innerHTML = ' <div class="cbtn full"> ';
     } else {
         w.style.width = initialWidth;
         w.style.height = "initial";
-        $(".screen").html(' <div class="cbtn empty"> ');
+        document.getElementsByClassName("screen")[0].innerHTML = ' <div class="cbtn empty"> ';
     }
     toggleFullScreen();
 }
@@ -66,8 +66,8 @@ function updateSlider() {
 	if(curmins < 10){ curmins = "0"+curmins; }
     if(durmins < 10){ durmins = "0"+durmins; }
     
-	$("#curTime").html(curmins+":"+cursecs);
-    $("#durTime").html(durmins+":"+dursecs);
+	document.getElementById("curTime").innerHTML = curmins + ":" + cursecs;
+    document.getElementById("durTime").innerHTML = durmins + ":" + dursecs;
     
     if (s.value == Math.floor(v.duration)) {
         playPause(false);
@@ -90,9 +90,9 @@ function updateVideoSpeed() {
 function updateVideoVolume() {
     v.volume = l.value/100
     if (v.volume == 0) {
-        $(".volume").html(' <div class="cbtn muted"></div> ');
+        document.getElementsByClassName("volume")[0].innerHTML = ' <div class="cbtn muted"></div> ';
     } else {
-        $(".volume").html(' <div class="cbtn unmuted"></div> ');
+        document.getElementsByClassName("volume")[0].innerHTML = ' <div class="cbtn unmuted"></div> ';
     }
 }
 function playPause(paused) {
@@ -101,10 +101,10 @@ function playPause(paused) {
             v.currentTime = 0;
         }
         v.play();
-        $(".play").html(' <div class="cbtn pauseBtn"></div> ');
+        document.getElementsByClassName("play")[0].innerHTML = ' <div class="cbtn pauseBtn"></div> ';
     } else {
         v.pause();
-        $(".play").html(' <div class="cbtn playBtn"></div> ');
+        document.getElementsByClassName("play")[0].innerHTML = ' <div class="cbtn playBtn"></div> ';
     }
 }
 function toggleFullScreen() {
