@@ -101,10 +101,10 @@ function playPause(paused) {
             v.currentTime = 0;
         }
         v.play();
-        $(".play").html(' <div class="cbtn pauseBtn"></div> ');
+        document.getElementsByClassName("play")[0].innerHTML = ' <div class="cbtn pauseBtn"></div> ';
     } else {
         v.pause();
-        $(".play").html(' <div class="cbtn playBtn"></div> ');
+        document.getElementsByClassName("play")[0].innerHTML = ' <div class="cbtn playBtn"></div> ';
     }
 }
 function toggleFullScreen() {
