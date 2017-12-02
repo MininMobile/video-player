@@ -20,12 +20,17 @@ function onload2() {
     </div>
     </ul>`;
 
-    $(".videoWrapper").html(data);
+    document.getElementsByClassName("videoWrapper")[0].innerHTML = data;
 
     var script = document.createElement('script');
-    script.src = 'video.js';    
-    document.getElementsByTagName('head')[0].appendChild(script);
-    $("head").append(`<link rel="stylesheet" type="text/css" href="video.css">`);
+    script.src = 'video.js';
+	document.getElementsByTagName('head')[0].appendChild(script);
 
-    setTimeout(function(){onLoad();},1000);
+    var style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.type = 'text/css';
+    style.href = 'video.css';
+	document.getElementsByTagName('head')[0].appendChild(style);
+
+    setTimeout(function(){ onLoad(); },1000);
 }
