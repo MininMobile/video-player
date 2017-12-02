@@ -1,5 +1,5 @@
 # video-player
-A simple html5 video player.
+A simple, pure js, html5 video player.
 
 ## Usage
 Add your video to a directory somewhere on the webserver, just
