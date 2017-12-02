@@ -24,17 +24,17 @@ function onLoad() {
     l.setAttribute("max", "100");
     l.setAttribute("value", "50");
 
-    // Init Play
-    $(".play").click(function() { playPause(v.paused); })
+	// Init Play
+	document.getElementsByClassName("play")[0].addEventListener("click", function() { playPause(v.paused) }, false);
     
     // Init Mute
-    $(".volume").click(function() { l.value = 0; updateVideoVolume(); })
+    document.getElementsByClassName("volume")[0].addEventListener("click", function() { l.value = 0; updateVideoVolume(); }, false);
     
     // Init Mute
-    $(".screen").click(function() { updateVideoScreen(); })
+    document.getElementsByClassName("screen")[0].addEventListener("click", function() { updateVideoScreen(); }, false);
     
     // Init Speed
-    $(".speed").click(function() { updateVideoSpeed(); })
+    document.getElementsByClassName("speed")[0].addEventListener("click", function() { updateVideoSpeed(); })
 }
 $(document).on('input', ".slideBtn", function() { updateVideoTime(); });
 $(document).on('input', ".volBtn", function() { updateVideoVolume(); });
