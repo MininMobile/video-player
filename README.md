@@ -23,5 +23,5 @@ embed process.
 I'm working on it! <3)
 
 ## Credits
-- [jQuery](https://jquery.com/)
+- [Time Code Snippet](http://www.developphp.com/video/JavaScript/Video-Duration-and-Current-Play-Time-Programming-Tutorial)
 - [Video Used](https://www.youtube.com/watch?v=RUina9K2Y8g)
