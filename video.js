@@ -34,10 +34,10 @@ function onLoad() {
     document.getElementsByClassName("screen")[0].addEventListener("click", function() { updateVideoScreen(); }, false);
     
     // Init Speed
-    document.getElementsByClassName("speed")[0].addEventListener("click", function() { updateVideoSpeed(); })
+    document.getElementsByClassName("speed")[0].addEventListener("click", function() { updateVideoSpeed(); }, false);
 }
-$(document).on('input', ".slideBtn", function() { updateVideoTime(); });
-$(document).on('input', ".volBtn", function() { updateVideoVolume(); });
+document.getElementsByClassName("slideBtn")[0].addEventListener("input", function() { updateVideoTime(); }, false);
+document.getElementsByClassName("volBtn")[0].addEventListener("input", function() { updateVideoVolume(); }, false);
 
 function updateVideoTime() { v.currentTime = s.value; }
 
@@ -46,11 +46,11 @@ function updateVideoScreen() {
     if (f) {
         w.style.width = "calc(100% - 1px)";
         w.style.height = "100vh";
-        $(".screen").html(' <div class="cbtn full"> ');
+        document.getElementsByClassName("screen")[0].innerHTML = ' <div class="cbtn full"> ';
     } else {
         w.style.width = initialWidth;
         w.style.height = "initial";
-        $(".screen").html(' <div class="cbtn empty"> ');
+        document.getElementsByClassName("screen")[0].innerHTML = ' <div class="cbtn empty"> ';
     }
     toggleFullScreen();
 }
