@@ -90,9 +90,9 @@ function updateVideoSpeed() {
 function updateVideoVolume() {
     v.volume = l.value/100
     if (v.volume == 0) {
-        $(".volume").html(' <div class="cbtn muted"></div> ');
+        document.getElementsByClassName("volume")[0].innerHTML = ' <div class="cbtn muted"></div> ';
     } else {
-        $(".volume").html(' <div class="cbtn unmuted"></div> ');
+        document.getElementsByClassName("volume")[0].innerHTML = ' <div class="cbtn unmuted"></div> ';
     }
 }
 function playPause(paused) {
