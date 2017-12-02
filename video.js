@@ -66,8 +66,8 @@ function updateSlider() {
 	if(curmins < 10){ curmins = "0"+curmins; }
     if(durmins < 10){ durmins = "0"+durmins; }
     
-	$("#curTime").html(curmins+":"+cursecs);
-    $("#durTime").html(durmins+":"+dursecs);
+	document.getElementById("curTime").innerHTML = curmins + ":" + cursecs;
+    document.getElementById("durTime").innerHTML = durmins + ":" + dursecs;
     
     if (s.value == Math.floor(v.duration)) {
         playPause(false);
