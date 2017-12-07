@@ -24,8 +24,8 @@ function onLoad() {
     l.setAttribute("max", "100");
     l.setAttribute("value", "50");
 
-	// Init Play
-	document.getElementsByClassName("play")[0].addEventListener("click", function() { playPause(v.paused) }, false);
+    // Init Play
+    document.getElementsByClassName("play")[0].addEventListener("click", function() { playPause(v.paused) }, false);
     
     // Init Mute
     document.getElementsByClassName("volume")[0].addEventListener("click", function() { l.value = 0; updateVideoVolume(); }, false);
